@@ -1,0 +1,8 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <engine:VisualElement name="unset-field-view" style="flex-grow: 0; flex-direction: row; align-items: center; flex-shrink: 0; border-left-color: rgb(32, 32, 32); border-right-color: rgb(32, 32, 32); border-top-color: rgb(32, 32, 32); border-bottom-color: rgb(32, 32, 32); border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-left-radius: 2px; border-top-right-radius: 2px; border-bottom-right-radius: 2px; border-bottom-left-radius: 2px; padding-top: 1px; padding-right: 1px; padding-bottom: 1px; padding-left: 1px; overflow: hidden;">
+        <engine:Label text="-None-" name="none-label" style="color: rgb(255, 57, 57);" />
+    </engine:VisualElement>
+    <engine:VisualElement name="set-field-view" style="flex-grow: 0; flex-direction: row; align-items: center; flex-shrink: 0; border-left-color: rgb(32, 32, 32); border-right-color: rgb(32, 32, 32); border-top-color: rgb(32, 32, 32); border-bottom-color: rgb(32, 32, 32); border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-top-left-radius: 2px; border-top-right-radius: 2px; border-bottom-right-radius: 2px; border-bottom-left-radius: 2px; padding-top: 1px; padding-right: 4px; padding-bottom: 1px; padding-left: 4px; overflow: hidden;">
+        <engine:Label text="Label" name="tag-label" />
+    </engine:VisualElement>
+</engine:UXML>
