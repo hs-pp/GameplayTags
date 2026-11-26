@@ -1,13 +1,26 @@
 using System.Collections.Generic;
 using DatastoresDX.Runtime;
 using DatastoresDX.Runtime.DataCollections;
+using UnityEngine;
 
 namespace GameplayTags.Runtime
 {
     [DataCollection(true, true, "Gameplay Tags")]
-    public class GameplayTagCollection : DataCollection
+    public class GameplayTagCollection : DataCollection, ISerializationCallbackReceiver
     {
         private Dictionary<Uid, GameplayTagTreeNode> m_tagTreeNodes;
+
+        void ISerializationCallbackReceiver.OnBeforeSerialize() { }
+
+        /// <summary>
+        /// Any deserialize (editor apply, undo, reimport) can add, remove or move tags, so rebuild the tree on next use.
+        /// The asset outlives Play Mode now that there's no domain reload so nothing else would reset it.
+        /// </summary>
+        void ISerializationCallbackReceiver.OnAfterDeserialize()
+        {
+            m_tagTreeNodes = null;
+        }
+
         private Dictionary<Uid, GameplayTagTreeNode> GenerateTreeNodes()
         {
             Dictionary<Uid, GameplayTagTreeNode> treeNodes = new();
