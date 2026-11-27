@@ -34,10 +34,12 @@ namespace GameplayTags.Runtime
                 TreeViewMeta meta = m_treeViewMetas[i];
                 if (!treeNodes.ContainsKey(tag.Id))
                 {
-                    treeNodes.Add(tag.Id, new GameplayTagTreeNode() { Tag = tag });
+                    treeNodes.Add(tag.Id, new GameplayTagTreeNode());
                 }
 
+                // A child listed earlier may have already added this node as its parent, without a tag.
                 GameplayTagTreeNode node = treeNodes[tag.Id];
+                node.Tag = tag;
                 if (!treeNodes.ContainsKey(meta.ParentId))
                 {
                     treeNodes.Add(meta.ParentId, new GameplayTagTreeNode());
