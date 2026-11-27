@@ -5,7 +5,8 @@ using UnityEngine;
 
 namespace GameplayTags.Runtime
 {
-    [DataCollection(true, true, "Gameplay Tags")]
+    // Folders aren't tags, so a folder would break the parent chain IsChildTagOf walks.
+    [DataCollection(true, true, "Gameplay Tags", allowFolders: false)]
     public class GameplayTagCollection : DataCollection, ISerializationCallbackReceiver
     {
         private Dictionary<Uid, GameplayTagTreeNode> m_tagTreeNodes;
